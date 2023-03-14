@@ -1,0 +1,38 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Game {
+  + playGame(): void
+  + main(String[]): void
+  - printMoves(Move, Move): void
+  - printHelp(): void
+  - processMove(Move): boolean
+  - welcome(): void
+  - computerMove(): Move
+  - printWinner(int): void
+}
+class Move {
+  - move: String
+  + beats(Move): int
+   unknown: boolean
+   move: String
+}
+class MoveWords {
+  + checkWinner(String, String): int
+  + showCommands(): void
+  - getIndex(String): int
+  + isValidMoveCommand(String): boolean
+  + randomMove(): String
+  + showMoves(): void
+  + showWords(): void
+}
+class Parser {
+  + showCommands(): void
+  + newRandomMove(): Move
+   move: Move
+}
+
+@enduml
